@@ -25,6 +25,7 @@ import {
   Plane,
   Plug,
   ScanLine,
+  ScanSearch,
   Server,
   Ship,
   Smartphone,
@@ -47,6 +48,7 @@ const ICONS: Record<string, LucideIcon> = {
   badge: BadgeCheck,
   lock: Lock,
   scan: ScanLine,
+  'scan-search': ScanSearch,
   tower: Users,
   code: Code2,
   server: Server,
@@ -369,7 +371,7 @@ function ProjectBlock({ project, index, onOpen }: { project: Project; index: num
             </span>
             <div>
               <span className="eyebrow">
-                Project {String(index + 1).padStart(2, '0')} · {project.kind === 'mobile' ? 'iOS & Android app' : 'Web + desktop app'}
+                Project {String(index + 1).padStart(2, '0')} · {project.kind === 'mobile' ? 'iOS & Android app' : project.kind === 'cli' ? 'Open-source CLI' : 'Web + desktop app'}
               </span>
               <h3>{project.name}</h3>
               <p className="tagline">{project.tagline}</p>

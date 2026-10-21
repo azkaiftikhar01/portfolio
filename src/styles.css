@@ -906,6 +906,9 @@ button {
 .project-grape .highlights li::before {
   background: var(--grape);
 }
+.project-sky .highlights li::before {
+  background: var(--sky);
+}
 
 .web-gallery .browser {
   position: relative;

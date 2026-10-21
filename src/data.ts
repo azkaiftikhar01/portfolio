@@ -49,7 +49,7 @@ export type Project = {
   name: string
   icon: string
   tagline: string
-  kind: 'web' | 'mobile'
+  kind: 'web' | 'mobile' | 'cli'
   color: string
   summary: string
   highlights: string[]
@@ -126,6 +126,36 @@ export const projects: Project[] = [
       { src: '/projects/saveiour/07-goals.webp', title: 'Goals', caption: "Active and funded goals with on-track or behind status at a glance." },
       { src: '/projects/saveiour/10-join.webp', title: 'Join a squad', caption: "An invite link carries the full plan, so friends see exactly what they are signing up for." },
       { src: '/projects/saveiour/11-save.webp', title: 'Add money', caption: "Extra savings go straight in, and the upcoming cards shrink so the deadline still holds." },
+    ],
+  },
+  {
+    id: 'unslop',
+    name: 'unslop',
+    icon: 'scan-search',
+    tagline: 'Lint your AI-built UI',
+    kind: 'cli',
+    color: 'sky',
+    summary:
+      'An open-source command-line tool that audits websites built with Claude Code, Cursor or Codex and reports what makes them feel generic, broken or unfinished: the stock blue-violet gradient, the same card grid in every section, interchangeable marketing copy, placeholder content, links to "#", buttons that do nothing and layouts that scroll sideways on a phone. Every finding comes with evidence, a fix, and a prompt you can paste straight back into your coding agent. It runs entirely on your machine, with no account and no API key.',
+    highlights: [
+      'Renders every page at desktop and mobile widths with Playwright and runs 37 deterministic rules, so results are the same on every run and need no model',
+      'Cross-page sameness: fingerprints each section\'s layout and flags different pages built from one skeleton, while shared navigation and a real design system pass',
+      'Evidence you can act on: a screenshot crop with the element outlined, its CSS selector, and the exact file and line when the text can be traced back to source',
+      'SSRF-safe crawler: every browser request is served from Node over a connection pinned to a validated public address, so an audited page cannot reach localhost, a private network or cloud metadata',
+      'Transparent scoring: severity × confidence × rule weight on a saturating scale, with a broken footer link on ten pages counted once, and measured defects kept separate from design judgment calls',
+      'Optional critique from a local vision model through Ollama, kept advisory and never sent off the machine',
+    ],
+    stack: ['TypeScript', 'Node.js', 'Playwright', 'Commander', 'Vitest', 'Ollama'],
+    links: [{ label: 'Code on GitHub', href: 'https://github.com/azkaiftikhar01/unslop' }],
+    shots: [
+      { src: '/projects/unslop/01-overview.webp', title: 'Report overview', caption: "A slop score where lower is better, five weighted categories, what the scan covered and a fix-first list, all in one self-contained HTML file." },
+      { src: '/projects/unslop/02-evidence.webp', title: 'Evidence', caption: "Each finding shows the page, viewport and selector with a screenshot crop of the element, and folds the same footer link on every page into one item." },
+      { src: '/projects/unslop/03-gradient.webp', title: 'Stock gradients', caption: "The blue-violet-pink gradient is flagged with its computed colours, split into large backgrounds and gradient headline text." },
+      { src: '/projects/unslop/04-card-grid.webp', title: 'Repeated card grids', caption: "Sections built from the same three-card composition are grouped across pages and marked as a design observation, not a defect." },
+      { src: '/projects/unslop/05-fix-prompt.webp', title: 'Fix prompt', caption: "Tick the findings to fix and copy one prompt for Claude Code, Cursor or Codex, then rerun the audit to confirm they are gone." },
+      { src: '/projects/unslop/08-terminal.webp', title: 'In the terminal', caption: "One command serves the project, audits each page at two widths and prints the score with the five things to fix first." },
+      { src: '/projects/unslop/07-pages.webp', title: 'Audited pages', caption: "Desktop and mobile screenshots of every audited page, captured during the crawl." },
+      { src: '/projects/unslop/06-dark.webp', title: 'Dark mode', caption: "The report follows the system colour scheme." },
     ],
   },
 ]
