@@ -198,9 +198,9 @@ function Hero() {
             <i />
             <i />
             <i />
-            <span>leadboard.app</span>
+            <span>unslop audit</span>
           </div>
-          <img src="/projects/leadboard/hero.webp" alt="" />
+          <img src="/projects/unslop/hero.webp" alt="" />
         </div>
         <div className="phone tilt-r">
           <img src="/projects/saveiour/02-home.webp" alt="" />
