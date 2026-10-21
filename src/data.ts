@@ -67,9 +67,10 @@ export const projects: Project[] = [
     kind: 'cli',
     color: 'sky',
     summary:
-      'An open-source command-line tool that audits websites built with Claude Code, Cursor or Codex and reports what makes them look like every other one, or simply broken: the stock blue-violet gradient, the same card grid in every section, interchangeable marketing copy, placeholder content, links to "#", buttons that do nothing and layouts that scroll sideways on a phone. Every audit writes a ready-to-paste prompt so your coding agent can fix what it found, and the demo site goes from a slop score of 53 to 0 in one pass. It runs entirely on your machine, with no account and no API key.',
+      'An open-source command-line tool that audits websites built with Claude Code, Cursor or Codex and reports what makes them look like every other one, or simply broken: the stock blue-violet gradient, the same card grid in every section, interchangeable marketing copy, placeholder content, links to "#", buttons that do nothing and layouts that scroll sideways on a phone. Every audit writes a ready-to-paste prompt so your coding agent can fix what it found, and the demo site goes from a slop score of 57 to 0. Alongside the design checks it runs axe-core accessibility, performance, SEO and best-practice audits across the whole site in one command. It runs entirely on your machine, with no account and no API key.',
     highlights: [
-      'Renders every page at desktop and mobile widths with Playwright and runs 37 deterministic rules, so results are the same on every run and need no model',
+      'Renders every page at desktop and mobile widths with Playwright, several pages in parallel, and runs deterministic rules plus the full axe-core accessibility suite, so results are the same on every run and need no model',
+      'Performance, SEO and best practices in the same pass: page weight, oversized images, layout shift, main-thread blocking, duplicate titles, noindex, canonical and social-preview problems, mixed content, outdated jQuery',
       'Cross-page sameness: fingerprints each section\'s layout and flags different pages built from one skeleton, while shared navigation and a real design system pass',
       'Evidence you can act on: a screenshot crop with the element outlined, its CSS selector, and the exact file and line when the text can be traced back to source',
       'SSRF-safe crawler: every browser request is served from Node over a connection pinned to a validated public address, so an audited page cannot reach localhost, a private network or cloud metadata',
@@ -77,10 +78,11 @@ export const projects: Project[] = [
       'Writes the fix for you: every audit produces a prompt for Claude Code, Cursor or Codex, measured defects first, that tells the agent to ask for real content instead of inventing testimonials or numbers',
       'Optional critique from a local vision model through Ollama, kept advisory and never sent off the machine',
     ],
-    stack: ['TypeScript', 'Node.js', 'Playwright', 'Commander', 'Vitest', 'Ollama'],
+    stack: ['TypeScript', 'Node.js', 'Playwright', 'axe-core', 'Vitest', 'Ollama'],
     links: [{ label: 'Code on GitHub', href: 'https://github.com/azkaiftikhar01/samey' }],
     shots: [
-      { src: '/projects/samey/01-overview.webp', title: 'Report overview', caption: "A slop score where lower is better, five weighted categories, what the scan covered and a fix-first list, all in one self-contained HTML file." },
+      { src: '/projects/samey/01-overview.webp', title: 'Report overview', caption: "A slop score where lower is better, seven weighted categories from visual genericness to SEO, what the scan covered and a fix-first list, all in one self-contained HTML file." },
+      { src: '/projects/samey/09-accessibility.webp', title: 'Accessibility', caption: "axe-core runs inside the audited page: each contrast failure shows the exact ratio, colours and font size, with the element outlined on every page it appears." },
       { src: '/projects/samey/02-evidence.webp', title: 'Evidence', caption: "Each finding shows the page, viewport and selector with a screenshot crop of the element, and folds the same footer link on every page into one item." },
       { src: '/projects/samey/03-gradient.webp', title: 'Stock gradients', caption: "The blue-violet-pink gradient is flagged with its computed colours, split into large backgrounds and gradient headline text." },
       { src: '/projects/samey/04-card-grid.webp', title: 'Repeated card grids', caption: "Sections built from the same three-card composition are grouped across pages and marked as a design observation, not a defect." },
