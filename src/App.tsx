@@ -11,6 +11,7 @@ import {
   Copy,
   Database,
   FlaskConical,
+  Gamepad2,
   GraduationCap,
   Globe,
   Layers,
@@ -58,6 +59,7 @@ const ICONS: Record<string, LucideIcon> = {
   cloud: Cloud,
   plug: Plug,
   flask: FlaskConical,
+  gamepad: Gamepad2,
 }
 
 function Icon({ name, size = 22 }: { name: string; size?: number }) {
@@ -201,6 +203,15 @@ function Hero() {
             <span>samey audit</span>
           </div>
           <img src="/projects/samey/hero.webp" alt="" />
+        </div>
+        <div className="browser game-win tilt-g">
+          <div className="browser-bar">
+            <i />
+            <i />
+            <i />
+            <span>mewcatraz</span>
+          </div>
+          <img src="/projects/mewcatraz/hero.webp" alt="" />
         </div>
         <div className="phone tilt-r">
           <img src="/projects/saveiour/02-home.webp" alt="" />
@@ -371,7 +382,7 @@ function ProjectBlock({ project, index, onOpen }: { project: Project; index: num
             </span>
             <div>
               <span className="eyebrow">
-                Project {String(index + 1).padStart(2, '0')} · {project.kind === 'mobile' ? 'iOS & Android app' : project.kind === 'cli' ? 'Open-source CLI' : 'Web + desktop app'}
+                Project {String(index + 1).padStart(2, '0')} · {project.kind === 'mobile' ? 'iOS & Android app' : project.kind === 'cli' ? 'Open-source CLI' : project.kind === 'game' ? 'Browser game' : 'Web + desktop app'}
               </span>
               <h3>{project.name}</h3>
               <p className="tagline">{project.tagline}</p>

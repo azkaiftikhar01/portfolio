@@ -243,6 +243,10 @@ button {
   background: var(--sky);
   color: #fff;
 }
+.bg-mint-strong {
+  background: var(--mint);
+  color: #fff;
+}
 .remote-card:nth-child(4n + 1) .icon-tile,
 .client-grid > div:nth-child(1) .icon-tile {
   background: var(--sun);
@@ -506,6 +510,28 @@ button {
   width: 42%;
   max-width: 250px;
 }
+.hero-art .game-win {
+  position: absolute;
+  top: auto;
+  left: 6%;
+  bottom: 6px;
+  width: 46%;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+.game-win .browser-bar {
+  padding: 6px 10px;
+  background: var(--mint-soft);
+}
+.game-win .browser-bar i {
+  width: 9px;
+  height: 9px;
+}
+.tilt-g {
+  transform: rotate(2deg);
+  animation: bob 6s ease-in-out -1.5s infinite;
+}
 .tilt-l {
   transform: rotate(-3deg);
   animation: bob 6s ease-in-out infinite;
@@ -539,8 +565,8 @@ button {
   rotate: -8deg;
 }
 .s2 {
-  bottom: 70px;
-  left: -2%;
+  bottom: 240px;
+  left: -4%;
   background: var(--pink-soft);
   rotate: 6deg;
   animation-delay: -1s;
@@ -577,8 +603,8 @@ button {
   right: 22%;
 }
 .d2 {
-  bottom: 110px;
-  left: 42%;
+  bottom: 30px;
+  left: 56%;
   color: var(--grape);
   width: 34px;
   height: 34px;
@@ -908,6 +934,9 @@ button {
 }
 .project-sky .highlights li::before {
   background: var(--sky);
+}
+.project-mint .highlights li::before {
+  background: var(--mint);
 }
 
 .web-gallery .browser {
@@ -1394,6 +1423,21 @@ button {
   }
   .hero-art .phone img {
     border-radius: 21px;
+  }
+  .hero-art .game-win {
+    width: 50%;
+    left: 2%;
+    bottom: 0;
+    border-width: 2px;
+  }
+  .game-win .browser-bar {
+    padding: 4px 8px;
+  }
+  .game-win .browser-bar span {
+    display: none;
+  }
+  .s2 {
+    bottom: 140px;
   }
   .sticker {
     font-size: 12.5px;

@@ -49,7 +49,7 @@ export type Project = {
   name: string
   icon: string
   tagline: string
-  kind: 'web' | 'mobile' | 'cli'
+  kind: 'web' | 'mobile' | 'cli' | 'game'
   color: string
   summary: string
   highlights: string[]
@@ -159,6 +159,34 @@ export const projects: Project[] = [
       { src: '/projects/saveiour/07-goals.webp', title: 'Goals', caption: "Active and funded goals with on-track or behind status at a glance." },
       { src: '/projects/saveiour/10-join.webp', title: 'Join a squad', caption: "An invite link carries the full plan, so friends see exactly what they are signing up for." },
       { src: '/projects/saveiour/11-save.webp', title: 'Add money', caption: "Extra savings go straight in, and the upcoming cards shrink so the deadline still holds." },
+    ],
+  },
+  {
+    id: 'mewcatraz',
+    name: 'Mewcatraz',
+    icon: 'gamepad',
+    tagline: 'A cozy pixel adventure whose villagers are written by AI',
+    kind: 'game',
+    color: 'mint',
+    summary:
+      'A cozy pixel-art adventure that runs in the browser. You explore a village, a forest and a meadow with your pet, fight cute monsters, open chests and smash pots, and meet villagers whose personalities, conversations, quests and moods are written by an open-weight language model that remembers what you have done. Every sprite, tile and effect is drawn in code, with no image files.',
+    highlights: [
+      'AI villagers: every new game the model writes three villagers with their own personalities, likes and first words, plus a village rumour, and each line and reply choice in a conversation is generated live from how you play',
+      'Quests the game can actually run: villagers hand out defeat, collect and boss quests, and every model response is checked against a zod schema, with small slips repaired before anything reaches the game',
+      'World events chosen for your play style when you enter the forest or meadow: a calm day, night, rain, a monster swarm, hidden treasure or the Slime King',
+      'Provider fallback from Groq gpt-oss-120b to gpt-oss-20b to Hugging Face, then built-in villagers and quests, so the game always works, with per-visitor limits on the AI route',
+      'All pixel art drawn in code: 16×32 four-direction characters with shading, pets, tiles, houses, monsters and effects',
+      'Phaser 3 scene with movement, combat, a pet that follows you, chests and area exits, plus saving and on-screen controls for phones',
+    ],
+    stack: ['Next.js 15', 'TypeScript', 'Phaser 3', 'zod', 'Groq', 'Hugging Face', 'Vercel'],
+    links: [{ label: 'Play it', href: 'https://mewcatraz.vercel.app' }],
+    shots: [
+      { src: '/projects/mewcatraz/01-village.webp', title: 'Mewbrook Village', caption: "The village square with your pet. The rumour at the top was written by the model for this playthrough." },
+      { src: '/projects/mewcatraz/02-talk.webp', title: 'Talking to a villager', caption: "Every line and all three reply choices are generated live, in the villager's own voice, and friendship grows as you talk." },
+      { src: '/projects/mewcatraz/03-quest.webp', title: 'A quest from a villager', caption: "Picking a reply can start a quest the game knows how to run, tracked in the corner until it's done." },
+      { src: '/projects/mewcatraz/04-fight.webp', title: 'Combat', caption: "Monsters, chests, pots and gems in Whisperwood Forest, all drawn in code." },
+      { src: '/projects/mewcatraz/05-forest.webp', title: 'World events', caption: "Entering a new area, the model picks the day's event for your play style." },
+      { src: '/projects/mewcatraz/06-title.webp', title: 'Title screen', caption: "The hero and pet on the title screen, rendered from the same in-code pixel art as the game." },
     ],
   },
 ]
